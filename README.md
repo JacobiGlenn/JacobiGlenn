@@ -1,9 +1,8 @@
 <img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=JacobiGlenn.JacobiGlenn" />
 
-<div align="center">
-  <img src="assets/NameFontCycle.gif" alt="Jacobi Glenn - Font Cycling Header" width="800">
-</div>
-
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/JacobGlenn/JacobGlenn/main/assets/NameFontCycle.gif" alt="Jacob Glenn" width="800">
+</h1>
 
 
 <!--

@@ -46,7 +46,23 @@
 <div align="center">
   <h2> 🐍 My Contributions 🐍 </h2>
   <br>
-  <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/jacobiglenn/jacobiglenn/output/github-contribution-grid-snake.svg" />
+  
+  <!-- This picture element automatically switches the image based on user's dark/light mode -->
+  <picture>
+    <source 
+      media="(prefers-color-scheme: dark)" 
+      srcset="https://raw.githubusercontent.com/JacobiGlenn/JacobiGlenn/output/github-snake-dark.svg"
+    />
+    <source 
+      media="(prefers-color-scheme: light)" 
+      srcset="https://raw.githubusercontent.com/JacobiGlenn/JacobiGlenn/output/github-snake.svg"
+    />
+    <img 
+      alt="github contribution grid snake animation" 
+      src="https://raw.githubusercontent.com/JacobiGlenn/JacobiGlenn/output/github-snake.svg"
+    />
+  </picture>
+
   <br/><br/><br/>
 </div>
 

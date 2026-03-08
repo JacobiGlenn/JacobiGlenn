@@ -1,0 +1,68 @@
+name: Guestbook
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Runs every hour
+  issues:
+    types: [opened, edited, deleted]
+  issue_comment:
+    types: [created, edited, deleted]
+  workflow_dispatch:  # Allow manual triggering
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  update-guestbook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Guestbook Workflow
+        uses: nfhipona/guestbook-workflow@main
+        with:
+          target_branch: 'main'
+          section_identifier: 'guestbook'
+          max_display_count: 10
+          include_body_formatting: true
+          entry_labels: 'guestbook'
+          comment_template: |
+            <div align="center" style="margin: 20px 0; padding: 15px; border-bottom: 1px solid #e1e4e8;">
+              <table align="center">
+                <tr>
+                  <td align="center" width="300">
+                    <a href="$profile">
+                      <img src="https://avatars.githubusercontent.com/$username?size=100" width="60" height="60" style="border-radius: 50%;" />
+                      <br />
+                      <strong>$username</strong>
+                    </a>
+                  </td>
+                  <td align="left" width="500">
+                    <em>"$content"</em>
+                    <br />
+                    <small>📅 $date</small>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          
+          comment_link_template: |
+            <div align="center" style="margin: 40px 0 20px 0;">
+              <a href="https://github.com/$username/$repo/issues/new?title=👋%20Guestbook%20Entry&labels=guestbook" style="display: inline-block; padding: 12px 30px; background-color: #2ea44f; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 16px;">
+                ✍️ Sign My Guestbook
+              </a>
+              <p style="color: #586069; margin-top: 10px;">
+                (Create an issue with the "guestbook" label)
+              </p>
+            </div>
+          
+          empty_template: |
+            <div align="center" style="margin: 30px 0; padding: 30px; background: #f6f8fa; border-radius: 8px;">
+              <h3>🌟 Be the First to Sign! 🌟</h3>
+              <p>This guestbook is waiting for your message...</p>
+              <a href="https://github.com/$username/$repo/issues/new?title=👋%20Guestbook%20Entry&labels=guestbook" style="display: inline-block; padding: 10px 20px; background-color: #2ea44f; color: white; text-decoration: none; border-radius: 6px;">
+                Sign Now
+              </a>
+            </div>

@@ -33,7 +33,7 @@
 </div>
 
 
-<h2 align="center"> 🛠️ Languages-Frameworks-Tools 🛠️ </h2>
+<h1 align="center"> 🛠️ Languages-Frameworks-Tools 🛠️ </h1>
 <br/>
 <div align="center">
     <a href="https://skillicons.dev">
@@ -42,7 +42,7 @@
     </a>
 </div>
 
-  <h2 align="center"> 🐍 My Contributions 🐍 </h2>
+  <h1 align="center"> 🐍 My Contributions 🐍 </h1>
   <br>
   
   <!-- This picture element automatically switches the image based on user's dark/light mode -->

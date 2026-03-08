@@ -42,9 +42,7 @@
     </a>
 </div>
 
-
-<div align="center">
-  <h2> 🐍 My Contributions 🐍 </h2>
+  <h2 align="center"> 🐍 My Contributions 🐍 </h2>
   <br>
   
   <!-- This picture element automatically switches the image based on user's dark/light mode -->
@@ -64,7 +62,6 @@
   </picture>
 
   <br/><br/><br/>
-</div>
 
 <!--
 **JacobiGlenn/JacobiGlenn** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

@@ -72,14 +72,15 @@
   </summary>
   
   <br/>
+  
    <!-- Sign Guestbook Button (inside dropdown) -->
   <div align="center" style="margin: 20px 0;">
-    <a href="https://github.com/JacobiGlenn/JacobiGlenn/issues/new?title=👋%20Guestbook%20Entry&labels=guestbook" 
+    <a href="https://github.com/JacobiGlenn/JacobiGlenn/issues/new?title=👋%20Guestbook%20Entry&labels=Guestbook Entry" 
        style="display: inline-block; padding: 10px 25px; background-color: #2ea44f; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
       ✍️ Sign My Guestbook
     </a>
     <p style="color: #586069; margin-top: 8px; font-size: 14px;">
-      (Create an issue with the "guestbook" label)
+      (Create an issue with the "Guestbook Entry" label)
     </p>
   </div>
   

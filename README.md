@@ -80,7 +80,7 @@
       ✍️ Sign My Guestbook
     </a>
     <p style="color: #586069; margin-top: 8px; font-size: 14px;">
-      (Create an issue with the "Guestbook Entry" label)
+      (Create an issue with the "Guestbook Entry" label and write a message in the title)
     </p>
   </div>
   

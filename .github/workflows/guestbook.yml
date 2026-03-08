@@ -1,18 +1,15 @@
-name: Guestbook
+name: Update Guestbook
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Runs every 5 minutes
+    - cron: '*/5 * * * *'  # Every 5 minutes
   issues:
-    types: [opened, edited, deleted, labeled, unlabeled]
-  issue_comment:
-    types: [created, edited, deleted]
-  workflow_dispatch:
+    types: [opened, edited, deleted, labeled]
+  workflow_dispatch:  # This lets you manually trigger it
 
 permissions:
   contents: write
   issues: read
-  pull-requests: write
 
 jobs:
   update-guestbook:
@@ -20,13 +17,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Update Guestbook
-        uses: marketplace/guestbook-action@v1
+      
+      - name: Update Guestbook from Issues
+        uses: techgaun/guestbook-action@v1.0.0
         with:
           gh_token: ${{ secrets.GITHUB_TOKEN }}
-          issue_label: 'Guestbook Entry'
-          max_entries: 2
+          issue_label: 'Guestbook Entry'  # Changed from 'guestbook' to match your label
+          max_entries: 20
           readme_path: './README.md'
-          section_start: '<!-- START_SECTION:guestbook -->'
-          section_end: '<!-- END_SECTION:guestbook -->'
+          section_name: 'guestbook'

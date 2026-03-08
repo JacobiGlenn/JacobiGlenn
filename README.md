@@ -67,11 +67,8 @@
 <details>
   <summary>
 
-<h1 align="right" style="cursor: pointer;">
-  📝 Guestbook
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=JacobiGlenn.JacobiGlenn" style="vertical-align: middle; transform: scale(2); transform-origin: center;" />
-</h1>
-
+<h1>📝 Guestbook⠀<span style="float: right;"><img src="https://visitor-badge.laobi.icu/badge?page_id=JacobiGlenn.JacobiGlenn" style="transform: scale(1.4); transform-origin: center;" /></span></h1>
+    <p align="center" style="color: #586069; margin-top: 5px;">Click to see who's been here! 👇</p>
   </summary>
   
   <br/>

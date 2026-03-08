@@ -1,9 +1,14 @@
 
 <img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=JacobiGlenn.JacobiGlenn" />
 
-<div align="center">
+<h1 align="center">
   <img src="Assets/NameFontCycle.gif" alt="Jacob Glenn" width="450">
-</div>
+</h1>
+
+<h3 align="center"> Software Engineering & Computer Science Student at UCI </h3>
+
+<br/>
+
 
 
 <!--

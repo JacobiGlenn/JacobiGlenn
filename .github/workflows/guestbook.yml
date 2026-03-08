@@ -2,10 +2,10 @@ name: Update Guestbook
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Every 5 minutes
+    - cron: '*/5 * * * *'
   issues:
     types: [opened, edited, deleted, labeled]
-  workflow_dispatch:  # This lets you manually trigger it
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -18,11 +18,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Update Guestbook from Issues
-        uses: techgaun/guestbook-action@v1.0.0
+      - name: Guestbook
+        uses: jonico/guestbook-action@master
         with:
-          gh_token: ${{ secrets.GITHUB_TOKEN }}
-          issue_label: 'Guestbook Entry'  # Changed from 'guestbook' to match your label
-          max_entries: 20
-          readme_path: './README.md'
-          section_name: 'guestbook'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          label: 'Guestbook Entry'
+          max: 20
+          readme: './README.md'
+          section: 'guestbook'

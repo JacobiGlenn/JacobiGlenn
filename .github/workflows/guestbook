@@ -2,9 +2,9 @@ name: Guestbook
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Runs every hour
+    - cron: '*/5 * * * *'  # Runs every 5 minutes
   issues:
-    types: [opened, edited, deleted]
+    types: [opened, edited, deleted, labeled, unlabeled]
   issue_comment:
     types: [created, edited, deleted]
   workflow_dispatch:
@@ -12,6 +12,7 @@ on:
 permissions:
   contents: write
   issues: read
+  pull-requests: write
 
 jobs:
   update-guestbook:
@@ -20,35 +21,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Guestbook Workflow
-        uses: nfhipona/guestbook-workflow@main
+      - name: Update Guestbook
+        uses: marketplace/guestbook-action@v1
         with:
-          target_branch: 'main'
-          section_identifier: 'guestbook'
-          max_display_count: 20
-          include_body_formatting: true
-          entry_labels: 'guestbook'
-          comment_template: |
-            <div align="center" style="margin: 20px 0; padding: 15px; border-bottom: 1px solid #e1e4e8;">
-              <table align="center">
-                <tr>
-                  <td align="center" width="300">
-                    <a href="$profile">
-                      <img src="https://avatars.githubusercontent.com/$username?size=100" width="60" height="60" style="border-radius: 50%;" />
-                      <br />
-                      <strong>$username</strong>
-                    </a>
-                  </td>
-                  <td align="left" width="500">
-                    <em>"$content"</em>
-                    <br />
-                    <small>📅 $date</small>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          
-          empty_template: |
-            <div align="center" style="margin: 20px 0; padding: 20px; background: #f6f8fa; border-radius: 8px;">
-              <p style="color: #586069; margin: 0;">🌟 No entries yet. Be the first to sign!</p>
-            </div>
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
+          issue_label: 'guestbook'
+          max_entries: 20
+          readme_path: './README.md'
+          section_start: '<!-- START_SECTION:guestbook -->'
+          section_end: '<!-- END_SECTION:guestbook -->'

@@ -15,14 +15,75 @@ jobs:
   update-guestbook:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-      
-      - name: Guestbook
-        uses: jonico/guestbook-action@master
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          label: 'Guestbook Entry'
-          max: 20
-          readme: './README.md'
-          section: 'guestbook'
+
+      - name: Get guestbook issues
+        id: get-issues
+        run: |
+          echo "Fetching issues with label 'Guestbook Entry'..."
+          
+          # Use GitHub API to get issues with the label
+          issues=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/issues?state=all&labels=Guestbook%20Entry&per_page=20")
+          
+          # Save to file
+          echo "$issues" > issues.json
+          
+          # Count issues
+          count=$(echo "$issues" | jq '. | length')
+          echo "Found $count issues"
+          
+          # Set output
+          echo "count=$count" >> $GITHUB_OUTPUT
+
+      - name: Generate guestbook HTML
+        run: |
+          echo "Generating guestbook entries..."
+          
+          # Start the guestbook HTML
+          echo "<!-- GUESTBOOK_START -->" > guestbook.html
+          
+          # Read issues and generate HTML
+          cat issues.json | jq -r '.[] | 
+            "<div align=\"center\" style=\"margin: 15px 0; padding: 10px; border-bottom: 1px solid #e1e4e8;\">
+              <a href=\"\(.user.html_url)\">
+                <img src=\"\(.user.avatar_url)&s=40\" width=\"30\" height=\"30\" style=\"border-radius: 50%; vertical-align: middle; margin-right: 10px;\" />
+                <strong>\(.user.login)</strong>
+              </a>
+              <br/>
+              <span style=\"color: #24292e;\">“\(.title)”</span>
+              <br/>
+              <small style=\"color: #586069;\">🕒 \(.created_at | split("T")[0])</small>
+            </div>"' >> guestbook.html
+          
+          echo "<!-- GUESTBOOK_END -->" >> guestbook.html
+          
+          echo "Generated $(grep -c "<div" guestbook.html) entries"
+
+      - name: Update README
+        run: |
+          echo "Updating README.md..."
+          
+          # Read current README
+          cp README.md README.md.bak
+          
+          # Replace content between markers with new guestbook
+          awk '/<!-- START_SECTION:guestbook -->/{print;system("cat guestbook.html");next}/<!-- END_SECTION:guestbook -->/{print;next}1' README.md.bak > README.md
+          
+          echo "README updated"
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Check if there are changes
+          if git diff --quiet README.md; then
+            echo "No changes to commit"
+          else
+            git add README.md
+            git commit -m "docs: update guestbook [skip ci]"
+            git push
+            echo "Changes committed and pushed"
+          fi

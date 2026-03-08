@@ -1,8 +1,9 @@
+
 <img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=JacobiGlenn.JacobiGlenn" />
 
-<h1 align="center">
+<div align="center">
   <img src="Assets/NameFontCycle.gif" alt="Jacob Glenn" width="450">
-</h1>
+</div>
 
 
 <!--

@@ -25,7 +25,7 @@ jobs:
         uses: marketplace/guestbook-action@v1
         with:
           gh_token: ${{ secrets.GITHUB_TOKEN }}
-          issue_label: 'guestbook'
+          issue_label: 'Guestbook Entry'
           max_entries: 20
           readme_path: './README.md'
           section_start: '<!-- START_SECTION:guestbook -->'

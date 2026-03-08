@@ -26,7 +26,7 @@ jobs:
         with:
           gh_token: ${{ secrets.GITHUB_TOKEN }}
           issue_label: 'Guestbook Entry'
-          max_entries: 20
+          max_entries: 2
           readme_path: './README.md'
           section_start: '<!-- START_SECTION:guestbook -->'
           section_end: '<!-- END_SECTION:guestbook -->'

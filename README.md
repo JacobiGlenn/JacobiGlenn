@@ -1,6 +1,4 @@
 
-<img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=JacobiGlenn.JacobiGlenn" />
-
 <h1 align="center">
   <img src="Assets/NameFontCycle.gif" alt="Jacobi Glenn" width="550">
 </h1>
@@ -10,6 +8,7 @@
 <br/>
 
 <div align="center">
+
 
 📝 Currently working on an [AI Powered IDE For Collaboration](https://github.com/JacobiGlenn/collide)  
   
@@ -63,17 +62,6 @@
 
   <br/><br/><br/>
 
-<!--
-**JacobiGlenn/JacobiGlenn** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<div align="center" style="margin: 30px 0;">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=JacobiGlenn.JacobiGlenn" style="width: 100px;" />
+</div>

@@ -93,6 +93,28 @@
       <strong>JacobiGlenn</strong>
     </a>
     <br/>
+    <span style="color: #24292e;">“Wow this is such a rad profile”</span>
+    <br/>
+    <small style="color: #586069;">🕒 2026-03-08</small>
+  </div>
+<div align="center" style="margin: 15px 0; padding: 10px; border-bottom: 1px solid #e1e4e8;">
+    <a href="https://github.com/JacobiGlenn">
+      <img src="https://avatars.githubusercontent.com/u/232695818?v=4&s=40" width="30" height="30" style="border-radius: 50%; vertical-align: middle; margin-right: 10px;" />
+      <strong>JacobiGlenn</strong>
+    </a>
+    <br/>
+    <span style="color: #24292e;">“👋 Guestbook Entry”</span>
+    <br/>
+    <small style="color: #586069;">🕒 2026-03-08</small>
+  </div>
+<!-- GUESTBOOK_END -->
+<!-- GUESTBOOK_START -->
+<div align="center" style="margin: 15px 0; padding: 10px; border-bottom: 1px solid #e1e4e8;">
+    <a href="https://github.com/JacobiGlenn">
+      <img src="https://avatars.githubusercontent.com/u/232695818?v=4&s=40" width="30" height="30" style="border-radius: 50%; vertical-align: middle; margin-right: 10px;" />
+      <strong>JacobiGlenn</strong>
+    </a>
+    <br/>
     <span style="color: #24292e;">“👋 Guestbook Entry”</span>
     <br/>
     <small style="color: #586069;">🕒 2026-03-08</small>

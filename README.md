@@ -31,7 +31,6 @@
     </a>
 </div>
 
-
 <h1 align="center"> 🛠️ Languages-Frameworks-Tools 🛠️ </h1>
 <br/>
 <div align="center">
@@ -62,13 +61,38 @@
 
   <br/><br/><br/>
 
-<div align="center" style="margin: 30px 0;">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=JacobiGlenn.JacobiGlenn" style="width: 100px;" />
-</div>
-<!-- Your existing visitor badge -->
-<div align="center" style="margin: 30px 0;">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=JacobiGlenn.JacobiGlenn" style="width: 100px;" />
-</div>
 
-<!-- START_SECTION:guestbook -->
-<!-- END_SECTION:guestbook -->
+
+
+<details>
+  <summary>
+
+<h1 align="right" style="cursor: pointer;">
+  📝 Guestbook
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=JacobiGlenn.JacobiGlenn" style="vertical-align: middle; transform: scale(2); transform-origin: center;" />
+</h1>
+
+  </summary>
+  
+  <br/>
+  
+  <!-- Sign Guestbook Button (inside dropdown) -->
+  <div align="center" style="margin: 20px 0;">
+    <a href="https://github.com/JacobiGlenn/JacobiGlenn/issues/new?title=👋%20Guestbook%20Entry&labels=guestbook" 
+       style="display: inline-block; padding: 10px 25px; background-color: #2ea44f; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
+      ✍️ Sign My Guestbook
+    </a>
+    <p style="color: #586069; margin-top: 8px; font-size: 14px;">
+      (Create an issue with the "guestbook" label)
+    </p>
+  </div>
+  
+  <!-- The guestbook entries will be inserted here automatically -->
+  <!-- START_SECTION:guestbook -->
+  <!-- END_SECTION:guestbook -->
+  
+</details>
+
+<br/>
+
+<!-- The rest of your README content after this... -->

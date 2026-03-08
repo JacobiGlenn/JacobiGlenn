@@ -72,8 +72,7 @@
   </summary>
   
   <br/>
-  
-  <!-- Sign Guestbook Button (inside dropdown) -->
+   <!-- Sign Guestbook Button (inside dropdown) -->
   <div align="center" style="margin: 20px 0;">
     <a href="https://github.com/JacobiGlenn/JacobiGlenn/issues/new?title=👋%20Guestbook%20Entry&labels=guestbook" 
        style="display: inline-block; padding: 10px 25px; background-color: #2ea44f; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
@@ -91,5 +90,3 @@
 </details>
 
 <br/>
-
-<!-- The rest of your README content after this... -->

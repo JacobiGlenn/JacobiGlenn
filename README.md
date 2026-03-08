@@ -65,3 +65,10 @@
 <div align="center" style="margin: 30px 0;">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=JacobiGlenn.JacobiGlenn" style="width: 100px;" />
 </div>
+<!-- Your existing visitor badge -->
+<div align="center" style="margin: 30px 0;">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=JacobiGlenn.JacobiGlenn" style="width: 100px;" />
+</div>
+
+<!-- START_SECTION:guestbook -->
+<!-- END_SECTION:guestbook -->

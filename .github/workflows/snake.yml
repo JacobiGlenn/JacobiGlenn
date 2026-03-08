@@ -1,15 +1,16 @@
 name: Generate Snake Animation
 
 on:
-  # This schedules the action to run automatically every day at 5:00 UTC
   schedule:
     - cron: "0 5 * * *"
-  # This allows you to manually trigger the action from the Actions tab
   workflow_dispatch:
-  # This triggers the action whenever you push changes to the main branch
   push:
     branches:
       - main
+
+# Add this permissions block at the workflow level
+permissions:
+  contents: write
 
 jobs:
   generate:
@@ -22,9 +23,7 @@ jobs:
       - name: Generate GitHub Contribution Snake SVG
         uses: Platane/snk@v3
         with:
-          # github user name: use your username
           github_user_name: ${{ github.repository_owner }}
-          # Define the output files and their color themes
           outputs: |
             dist/github-snake.svg?palette=github-light
             dist/github-snake-dark.svg?palette=github-dark
@@ -36,5 +35,7 @@ jobs:
           target_branch: output
           build_dir: dist
           commit_message: "chore: update snake animation"
+          # Add this line to force push using the provided token
+          keep_history: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

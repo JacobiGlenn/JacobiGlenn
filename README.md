@@ -396,6 +396,8 @@
 <!-- GUESTBOOK_END -->
 <!-- GUESTBOOK_START -->
 <!-- GUESTBOOK_END -->
+<!-- GUESTBOOK_START -->
+<!-- GUESTBOOK_END -->
   <!-- END_SECTION:guestbook -->
   
 </details>

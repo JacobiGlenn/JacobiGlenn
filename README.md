@@ -93,7 +93,7 @@
       <strong>bergenlien</strong>
     </a>
     <br/>
-    <span style="color: #24292e;">“👋 Guestbook Entry”</span>
+    <span style="color: #24292e;">“Bergen was here”</span>
     <br/>
     <small style="color: #586069;">🕒 2026-03-12</small>
   </div>

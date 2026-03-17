@@ -86,7 +86,6 @@
   
   <!-- The guestbook entries will be inserted here automatically -->
   <!-- START_SECTION:guestbook -->
-
 <!-- GUESTBOOK_START -->
 <div align="center" style="margin: 15px 0; padding: 10px; border-bottom: 1px solid #e1e4e8;">
     <a href="https://github.com/bergenlien">
@@ -94,12 +93,11 @@
       <strong>bergenlien</strong>
     </a>
     <br/>
-    <span style="color: #24292e;">“Bergen was here”</span>
+    <span style="color: #24292e;">“Bergen was here ”</span>
     <br/>
     <small style="color: #586069;">🕒 2026-03-12</small>
   </div>
 <!-- GUESTBOOK_END -->
-
   <!-- END_SECTION:guestbook -->
   
 </details>

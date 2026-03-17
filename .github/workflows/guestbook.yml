@@ -37,6 +37,22 @@ jobs:
           # Set output
           echo "count=$count" >> $GITHUB_OUTPUT
 
+      - name: Filter inappropriate content
+        run: |
+          echo "Checking entries against PurgoMalum profanity API (free, comprehensive)..."
+          count=$(jq 'length' issues.json)
+          filtered="[]"
+          [ "$count" -eq 0 ] && echo "No entries to filter" && exit 0
+          for i in $(seq 0 $((count - 1))); do
+            text=$(jq -r --argjson idx "$i" '.[$idx] | (.body // "") + " " + (.title // "")' issues.json)
+            result=$(curl -s -G --max-time 5 "https://www.purgomalum.com/service/containsprofanity" --data-urlencode "text=$text" || echo "false")
+            if [ "$result" != "true" ]; then
+              filtered=$(echo "$filtered" | jq --argjson issue "$(jq -c ".[$i]" issues.json)" '. + [$issue]')
+            fi
+          done
+          echo "$filtered" > issues.json
+          echo "After content filter: $(jq 'length' issues.json) entries"
+
       - name: Generate guestbook HTML
         run: |
           echo "Generating guestbook entries..."
@@ -44,15 +60,15 @@ jobs:
           # Start the guestbook HTML
           echo "<!-- GUESTBOOK_START -->" > guestbook.html
           
-          # Read issues and generate HTML
-          cat issues.json | jq -r '.[] | 
+          # Read issues, deduplicate by user (keep most recent per user), generate HTML
+          cat issues.json | jq -r 'group_by(.user.login) | .[] | sort_by(.created_at) | last |
             "<div align=\"center\" style=\"margin: 15px 0; padding: 10px; border-bottom: 1px solid #e1e4e8;\">
               <a href=\"\(.user.html_url)\">
                 <img src=\"\(.user.avatar_url)&s=40\" width=\"30\" height=\"30\" style=\"border-radius: 50%; vertical-align: middle; margin-right: 10px;\" />
                 <strong>\(.user.login)</strong>
               </a>
               <br/>
-              <span style=\"color: #24292e;\">“\(.title)”</span>
+              <span style=\"color: #24292e;\">“\((.body // .title // "(no message)") | gsub("\n"; " ") | gsub("  +"; " "))”</span>
               <br/>
               <small style=\"color: #586069;\">🕒 \(.created_at | split("T")[0])</small>
             </div>"' >> guestbook.html
@@ -68,8 +84,10 @@ jobs:
           # Read current README
           cp README.md README.md.bak
           
-          # Replace content between markers with new guestbook
-          awk '/<!-- START_SECTION:guestbook -->/{print;system("cat guestbook.html");next}/<!-- END_SECTION:guestbook -->/{print;next}1' README.md.bak > README.md
+          # Replace content between markers with new guestbook (skip old content between markers)
+          awk '/<!-- START_SECTION:guestbook -->/{print;system("cat guestbook.html");skip=1;next}
+               /<!-- END_SECTION:guestbook -->/{print;skip=0;next}
+               skip{next}1' README.md.bak > README.md
           
           echo "README updated"
 

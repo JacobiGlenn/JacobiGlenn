@@ -10,7 +10,7 @@
 <div align="center">
 
 
-📝 Currently taking a break to focus on midterms <!-- [Letterboxd Clone](https://github.com/JacobiGlenn/Letterboxd-Copycat) -->
+📝 Currently taking a break from projects to focus on midterms <!-- [Letterboxd Clone](https://github.com/JacobiGlenn/Letterboxd-Copycat) -->
   
 🌱 I’m currently learning [Python](https://github.com/JacobiGlenn/Name_FontCycler), [Javascript](https://github.com/antsuh1028/PocketZot), 
 [TypeScript](https://github.com/JacobiGlenn/PeterAB), and [React](https://github.com/JacobiGlenn/ReactLearningActivity1)    

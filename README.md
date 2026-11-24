@@ -15,7 +15,7 @@
 🌱 I’m currently learning [Python](https://github.com/JacobiGlenn/Name_FontCycler), [Javascript](https://github.com/antsuh1028/PocketZot), 
 [TypeScript](https://github.com/JacobiGlenn/PeterAB), and [React](https://github.com/JacobiGlenn/ReactLearningActivity1)    
 
-🗪 Contact me at Glennjg@uci.edu | 931-300-5659 | [@ob1cobi](https://www.instagram.com/ob1cobi/)  
+🗪 Contact me at Glennjg@uci.edu | 971-300-5659 | [@ob1cobi](https://www.instagram.com/ob1cobi/)  
 
 </div>
 
